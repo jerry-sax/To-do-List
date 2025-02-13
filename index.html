@@ -1,15 +1,45 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>Would You Rather</title>
+  <title>Online To-do List</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=devce-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 id="page-title">Would You Rather</h1>
-  <p id="question">This is a placeholder question? p with id="question"</p>
-  <!-- Two "buttons" (divs) that you can click on to answer, little animation when you do, onclick=add to cookies' data -->
-  <div id="choice-1">This is div 1. id="choice-1"</div>
-  <div id="choice-2">This is div 2. id="choice-2"</div>
-  <script src="main.js"></script>
+  <h1 id="page-title">Online To-do List</h1>
+  <p id="question">This is a welcome message! Now it's describing how to use this website. There is a button (or a link) probably below here (maybe at the top) to click that creates a new list. Then,
+  the user is brought to a new hidden page or a form element that was hidden is shown to input the list name, possibly description. Finally, the list is added to the main page and the regular buttons 
+  to add/remove/cross off a list item (probably not move) are shown whenever one is added.</p>
+  <form id="new-list-form"  validationMessage="HELLO">
+    <input id="new-list-name" type="text" placeholder="List Name..." required />
+    <button id="new-list-button" class="button" onclick=submit>New List</button>
+  </form>
+  <div id="all-lists-div">
+    <div id="sample-list-div" class="list-div">
+      <button id="delete-list-button-sample-list" class="delete-list-button" onclick="deleteList('sample-list-div')">Delete List</button>
+      <h2 id="sample-list-title" class="list-title">This is the sample list name</h2>
+      <ul id="sample-list-ul" class="list-ul">
+        <li id="sample-list-item1" class="list-item" onclick="toggleChecked('sample-list-item1')">Sample list item 1</li>
+        <li id="sample-list-item2" class="list-item" onclick="toggleChecked('sample-list-item2')">Sample list item 2</li>
+        <li id="sample-list-input-li" class="input-li"><form id="sample-list-input-form" class="input-form" onsubmit="addItem()">
+        <input id="sample-list-item-input" class="item-input" placeholder="Add item..." type="text" required/>
+        </form></li>
+      </ul>
+    </div>
+    <div id="test-list-div" class="list-div">
+      <button id="delete-list-button-test-list" class="delete-list-button" onclick="deleteList('test-list-div')">Delete List</button>
+      <h2 id="test-list-title" class="list-title">This is the test list name</h2>
+      <ul id="test-list-ul" class="list-ul">
+        <li id="test-list-item1" class="list-item" onclick="toggleChecked('test-list-item1')">Test List Item</li>
+        <li id="sample-list-input-li" class="input-li"><form id="sample-list-input-form">
+        <input id="sample-list-input" class="input" placeholder="Add item..." type="text" required/>
+        </form></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>
